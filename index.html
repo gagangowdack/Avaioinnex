@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaio Innex | Interior Design</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home"><img src="004 copy.png" alt="Avaio Innex Logo" class="logo-img"></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div><div></div><div></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#estimator">Estimate</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li class="nav-actions-mobile">
+                <button class="btn-consult modal-trigger">Consult Now</button>
+            </li>
+        </ul>
+        <div class="nav-actions">
+            <button class="btn-consult modal-trigger">Consult Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80');">
+                <div class="slide-content">
+                    <h1>Bring your dream home to life</h1>
+                    <p>End-to-end interior design services tailored for you.</p>
+                    <button class="btn-primary modal-trigger">Book Free Consultation</button>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');">
+                <div class="slide-content">
+                    <h1>Modern & Elegant Spaces</h1>
+                    <p>Customized designs that fit your lifestyle perfectly.</p>
+                    <button class="btn-primary modal-trigger">Get a Free Estimate</button>
+                </div>
+            </div>
+        </div>
+        <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-header">
+            <h2>Complete Interior Solutions</h2>
+            <p>From comprehensive turnkey projects to bespoke modular setups, we deliver exceptional design experiences.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card modal-trigger">
+                <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Modular"></div>
+                <div class="service-info"><h3>Smart Modular Designs</h3><p>Innovative kitchens, wardrobes, and storage.</p><div class="card-arrow">&#10095;</div></div>
+            </div>
+            <div class="service-card modal-trigger">
+                <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=600&q=80" alt="Home"></div>
+                <div class="service-info"><h3>Complete Home Makeovers</h3><p>Seamless, end-to-end interior transformations.</p><div class="card-arrow">&#10095;</div></div>
+            </div>
+            <div class="service-card modal-trigger">
+                <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Premium"></div>
+                <div class="service-info"><h3>Premium & Luxury Spaces</h3><p>Exquisite designs that elevate your lifestyle.</p><div class="card-arrow">&#10095;</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estimator Section -->
+    <section id="estimator" class="estimator-section">
+        <div class="section-header">
+            <h2>Get the estimate for your home</h2>
+            <p>Calculate the approximate cost of doing up your home interiors</p>
+        </div>
+        <div class="estimator-grid">
+            <div class="estimate-card">
+                <div class="card-icons"><div class="icon-main"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B87B56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div></div>
+                <h3>Full Home Interior</h3>
+                <p>Know the estimate price for your full home interiors</p>
+                <button class="btn-calc" onclick="openWizard()">CALCULATE &gt;</button>
+            </div>
+            <div class="estimate-card">
+                <div class="card-icons"><div class="icon-main"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B87B56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><line x1="4" y1="10" x2="20" y2="10"></line><line x1="12" y1="10" x2="12" y2="20"></line></svg></div></div>
+                <h3>Kitchen</h3>
+                <p>Get an approximate costing for your kitchen interior.</p>
+                <button class="btn-calc" onclick="openKitchenWizard()">CALCULATE &gt;</button>
+            </div>
+            <div class="estimate-card">
+                <div class="card-icons"><div class="icon-main"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B87B56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><line x1="12" y1="3" x2="12" y2="21"></line><circle cx="10" cy="12" r="1"></circle><circle cx="14" cy="12" r="1"></circle></svg></div></div>
+                <h3>Wardrobe</h3>
+                <p>Our estimate for your dream wardrobe.</p>
+                <button class="btn-calc" onclick="openWardrobeWizard()">CALCULATE &gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: 4 Easy Process Section -->
+    <section id="process" class="process-section">
+        <div class="section-header">
+            <h2>Complete Home Interiors in 4 easy process</h2>
+            <p>We have excelled the 4-step process to bring your dream interiors to life. From the initial meeting with our expert interior designer to the final move-in day, we ensure a hassle-free journey that blends your vision with our interior designing skills.</p>
+        </div>
+        <div class="process-container">
+            <div class="process-image-col">
+                <div class="process-img-bg"></div>
+                <img id="processImg" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Brainstorming">
+            </div>
+            <div class="process-content-col">
+                
+                <!-- Animated Stepper Track -->
+                <div class="process-stepper-container">
+                    <div class="process-line"></div>
+                    
+                    <!-- Walking Man Animation -->
+                    <div id="walkingMan" class="walking-man">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Worker Body & Hat -->
+                            <path d="M12 2a4 4 0 0 0-4 4v1h8V6a4 4 0 0 0-4-4z" fill="#B87B56"/>
+                            <path d="M12 9c-2 0-4 1.5-4 3.5V16h8v-3.5c0-2-2-3.5-4-3.5z" fill="#B87B56"/>
+                            <path d="M9 16v6h2v-4h2v4h2v-6H9z" fill="#B87B56"/>
+                            <!-- Wood Plank -->
+                            <rect x="0" y="10" width="24" height="4" rx="1" fill="#8B4513"/>
+                            <!-- Arms -->
+                            <path d="M10 11v3a1 1 0 0 0 2 0v-2h1v2a1 1 0 0 0 2 0v-3h-5z" fill="#B87B56"/>
+                        </svg>
+                    </div>
+
+                    <div class="process-nodes">
+                        <div class="p-node active" onclick="setProcessStep(1)">1</div>
+                        <div class="p-node" onclick="setProcessStep(2)">2</div>
+                        <div class="p-node" onclick="setProcessStep(3)">3</div>
+                        <div class="p-node" onclick="setProcessStep(4)">4</div>
+                    </div>
+                </div>
+
+                <!-- Changing Content Area -->
+                <div class="process-text-area" id="processTextArea">
+                    <h3 id="processTitle">BRAIN STORMING</h3>
+                    <p id="processDesc">Unlocking endless possibilities - From inspiration to conceptualization, we start by understanding the true potential of your home and how you imagine the spaces around you to be.</p>
+                </div>
+                
+                <button class="btn-primary modal-trigger" style="margin-top:20px;">Enquiry</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="about" class="why-us">
+        <div class="section-header"><h2>Why Choose Avaio Innex</h2></div>
+        <div class="features-grid">
+            <div class="feature-box"><div class="feature-icon">📐</div><h4>Tailored Designs</h4><p>Every project is customized to match your unique taste.</p></div>
+            <div class="feature-box"><div class="feature-icon">⏱️</div><h4>On-Time Delivery</h4><p>Strict adherence to timelines ensuring you move in as planned.</p></div>
+            <div class="feature-box"><div class="feature-icon">💎</div><h4>Premium Quality</h4><p>We source only the best materials and finishes for a lasting look.</p></div>
+        </div>
+    </section>
+
+<!-- Portfolio Gallery Section (10 Images) -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-header">
+            <h2>Our Recent Masterpieces</h2>
+            <p>Take a glimpse into the spaces we've transformed recently.</p>
+        </div>
+        
+        <div class="portfolio-grid-10">
+            <!-- Image 1 -->
+            <div class="portfolio-item-simple">
+                <img src="p1.jpeg" alt="Avaio Innex Design 1">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 2 -->
+            <div class="portfolio-item-simple">
+                <img src="p2.jpeg" alt="Avaio Innex Design 2">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 3 -->
+            <div class="portfolio-item-simple">
+                <img src="p3.jpeg" alt="Avaio Innex Design 3">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 4 -->
+            <div class="portfolio-item-simple">
+                <img src="p4.jpeg" alt="Avaio Innex Design 4">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 5 -->
+            <div class="portfolio-item-simple">
+                <img src="p5.jpeg" alt="Avaio Innex Design 5">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 6 -->
+            <div class="portfolio-item-simple">
+                <img src="p6.jpeg" alt="Avaio Innex Design 6">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 7 -->
+            <div class="portfolio-item-simple">
+                <img src="p7.jpeg" alt="Avaio Innex Design 7">
+                <div class="hover-tint"></div>
+            </div>
+            <!-- Image 8 -->
+            <div class="portfolio-item-simple">
+                <img src="p8.jpeg" alt="Avaio Innex Design 8">
+                <div class="hover-tint"></div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Brochure Download Section -->
+    <section id="brochure" class="brochure-section">
+        <div class="brochure-container">
+            <div class="brochure-content">
+                <h2>Explore Our Digital Brochure</h2>
+                <p>Get a comprehensive look at our premium interior solutions. Download our interactive brochure featuring beautiful design layouts and our latest user interface screens to help you perfectly visualize your dream space.</p>
+                
+                <!-- Replace "avaio-innex-brochure.pdf" with your actual file name -->
+                <a href="Avaio innex.pdf" download="Avaio_Innex_Brochure.pdf" class="btn-primary" style="display: inline-block; text-decoration: none;">
+                    Download Brochure
+                </a>
+            </div>
+            <div class="brochure-image">
+                <div class="b-img-bg"></div>
+                <!-- You can replace this image URL with an actual cover shot of your brochure -->
+                <img src="broucher.jpeg" alt="Avaio Innex Brochure">
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand"><img src="004 copy.png" alt="Logo" class="footer-logo"><p>Transforming houses into dream homes with end-to-end interior design solutions.</p></div>
+            <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#services">Our Services</a></li></ul></div>
+            <div class="footer-contact"><h4>Get in Touch</h4><p>📍 Bengaluru, Karnataka</p><p>📧 info@avaioinnex.com</p><p>📞 +91 98765 43210</p></div>
+        </div>
+    </footer>
+
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE MODALS -->
+    <!-- ========================================== -->
+
+    <!-- 1. Contact Form -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span><h2>Start Your Project</h2>
+            <form id="consultForm">
+                <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+                <div class="form-group"><input type="tel" placeholder="Phone Number" required></div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+            <div id="successMessage" style="display: none; color: green; margin-top: 15px;">Thank you! Request received.</div>
+        </div>
+    </div>
+
+    <!-- 2. FULL HOME WIZARD -->
+    <div id="wizardModal" class="modal">
+        <div class="wizard-content">
+            <span class="close-wizard-btn">&times;</span>
+            <div class="stepper">
+                <div class="step active" data-step="1"><div class="step-circle">1</div><span>BHK</span></div><div class="step-line"></div>
+                <div class="step" data-step="2"><div class="step-circle">2</div><span>ROOMS</span></div><div class="step-line"></div>
+                <div class="step" data-step="3"><div class="step-circle">3</div><span>PACKAGE</span></div><div class="step-line"></div>
+                <div class="step" data-step="4"><div class="step-circle">4</div><span>PAY</span></div>
+            </div>
+            <div class="wizard-body">
+                <!-- Step 1 -->
+                <div class="wizard-step active" id="wizardStep1">
+                    <h2 class="text-center" style="margin-bottom: 25px;">Select your layout</h2>
+                    <div class="bhk-options">
+                        <div class="bhk-accordion" onclick="selectBHK(1, this)"><div class="bhk-header"><span class="radio-circle"></span> 1 BHK <span class="arrow">&#709;</span></div><div class="bhk-body"><div class="sub-option active" onclick="selectSize('Small', this, event)"><span class="radio-circle selected"></span><div class="sub-text"><strong>Small</strong></div></div><div class="sub-option" onclick="selectSize('Large', this, event)"><span class="radio-circle"></span><div class="sub-text"><strong>Large</strong></div></div></div></div>
+                        <div class="bhk-accordion active" onclick="selectBHK(2, this)"><div class="bhk-header"><span class="radio-circle selected"></span> 2 BHK <span class="arrow">&#708;</span></div><div class="bhk-body" style="display: flex;"><div class="sub-option active" onclick="selectSize('Small', this, event)"><span class="radio-circle selected"></span><div class="sub-text"><strong>Small</strong></div></div><div class="sub-option" onclick="selectSize('Large', this, event)"><span class="radio-circle"></span><div class="sub-text"><strong>Large</strong></div></div></div></div>
+                        <div class="bhk-accordion" onclick="selectBHK(3, this)"><div class="bhk-header"><span class="radio-circle"></span> 3 BHK <span class="arrow">&#709;</span></div><div class="bhk-body"><div class="sub-option active" onclick="selectSize('Small', this, event)"><span class="radio-circle selected"></span><div class="sub-text"><strong>Small</strong></div></div><div class="sub-option" onclick="selectSize('Large', this, event)"><span class="radio-circle"></span><div class="sub-text"><strong>Large</strong></div></div></div></div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="wizard-step" id="wizardStep2"><h2 class="text-center" style="margin-bottom: 25px;">Select rooms to design</h2>
+                    <div class="room-counters">
+                        <div class="room-row"><span>Living Room</span><div class="counter"><button onclick="updateCount('living', -1)">-</button><span id="count-living">1</span><button onclick="updateCount('living', 1)">+</button></div></div>
+                        <div class="room-row"><span>Kitchen</span><div class="counter"><button onclick="updateCount('kitchen', -1)">-</button><span id="count-kitchen">1</span><button onclick="updateCount('kitchen', 1)">+</button></div></div>
+                        <div class="room-row"><span>Bedroom</span><div class="counter"><button onclick="updateCount('bedroom', -1)">-</button><span id="count-bedroom">2</span><button onclick="updateCount('bedroom', 1)">+</button></div></div>
+                        <div class="room-row"><span>Bathroom</span><div class="counter"><button onclick="updateCount('bathroom', -1)">-</button><span id="count-bathroom">2</span><button onclick="updateCount('bathroom', 1)">+</button></div></div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="wizard-step" id="wizardStep3"><h2 class="text-center" style="margin-bottom: 25px;">Choose your finish</h2>
+                    <div class="package-options">
+                        <div class="package-card" onclick="selectPackage('Essentials', this)"><h3>Essentials</h3></div>
+                        <div class="package-card active" onclick="selectPackage('Premium', this)"><h3>Premium</h3></div>
+                        <div class="package-card" onclick="selectPackage('Luxe', this)"><h3>Luxe</h3></div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="wizard-step" id="wizardStep4">
+                    <h2 class="text-center">Your Estimated Quote</h2>
+                    <div style="background: #fdf5f1; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center; border: 1px solid #f2e2d9;">
+                        <h3 id="hEstimateAmount" style="color: #B87B56; font-size: 32px; margin-bottom: 5px;">₹0</h3>
+                        <p style="color: #888; font-size: 13px;">*Estimated baseline range for selected configuration</p>
+                    </div>
+                    <div class="payment-form">
+                        <input type="text" placeholder="Card Number (Dummy)" value="4111 1111 1111 1111">
+                        <div style="display:flex; gap:10px;"><input type="text" placeholder="MM/YY" value="12/28"><input type="text" placeholder="CVV" value="123"></div>
+                        <button class="btn-primary" id="payBtn" style="width:100%; margin-top:15px;" onclick="processPayment()">Pay ₹999 & Download Plan</button>
+                        <div id="paymentLoader" style="display:none; text-align:center; color:#B87B56;">Processing payment...</div>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="wizard-step" id="wizardStep5"><div class="text-center"><h2 style="color:green;">Payment Successful!</h2><button class="btn-primary" onclick="downloadPlan()" style="margin-top:20px;">Download Plan</button></div></div>
+            </div>
+            <div class="wizard-footer" id="wizardFooter">
+                <button id="wizBackBtn" class="btn-outline" onclick="nextStep(-1)">BACK</button>
+                <button id="wizNextBtn" class="btn-primary" onclick="nextStep(1)">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. KITCHEN WIZARD -->
+    <div id="kitchenWizardModal" class="modal">
+        <div class="wizard-content">
+            <span class="close-kwiz-btn">&times;</span>
+            <div class="stepper">
+                <div class="step active" data-step="1"><div class="step-circle">1</div><span>LAYOUT</span></div><div class="step-line"></div>
+                <div class="step" data-step="2"><div class="step-circle">2</div><span>MEASURE</span></div><div class="step-line"></div>
+                <div class="step" data-step="3"><div class="step-circle">3</div><span>PACKAGE</span></div><div class="step-line"></div>
+                <div class="step" data-step="4"><div class="step-circle">4</div><span>PAY</span></div>
+            </div>
+            <div class="wizard-body">
+                <div class="wizard-step active" id="kwizStep1"><h2 class="text-center">Select Kitchen Layout</h2>
+                    <div class="layout-grid">
+                        <div class="layout-card active" onclick="selectKitchenLayout('L-shaped', this)"><div class="radio-circle selected"></div><div class="layout-diagram l-shape"></div><h4>L-shaped</h4></div>
+                        <div class="layout-card" onclick="selectKitchenLayout('Straight', this)"><div class="radio-circle"></div><div class="layout-diagram straight-shape"></div><h4>Straight</h4></div>
+                        <div class="layout-card" onclick="selectKitchenLayout('U-shaped', this)"><div class="radio-circle"></div><div class="layout-diagram u-shape"></div><h4>U-shaped</h4></div>
+                        <div class="layout-card" onclick="selectKitchenLayout('Parallel', this)"><div class="radio-circle"></div><div class="layout-diagram parallel-shape"></div><h4>Parallel</h4></div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="kwizStep2"><h2 class="text-center">Review Measurements</h2><div id="dynamicMeasurementsArea"></div></div>
+                <div class="wizard-step" id="kwizStep3"><h2 class="text-center">Choose Finish Level</h2>
+                    <div class="package-options">
+                        <div class="package-card active" onclick="selectKitchenPackage('Premium', this)"><h3>Premium</h3></div>
+                        <div class="package-card" onclick="selectKitchenPackage('Luxe', this)"><h3>Luxe</h3></div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="kwizStep4">
+                    <h2 class="text-center">Your Estimated Quote</h2>
+                    <div style="background: #fdf5f1; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center; border: 1px solid #f2e2d9;">
+                        <h3 id="kEstimateAmount" style="color: #B87B56; font-size: 32px; margin-bottom: 5px;">₹0</h3>
+                        <p style="color: #888; font-size: 13px;">*Estimated baseline based on layout and measurements</p>
+                    </div>
+                    <div class="payment-form">
+                        <button class="btn-primary" id="kPayBtn" style="width:100%; margin-top:15px;" onclick="processKitchenPayment()">Pay ₹999 & Download</button>
+                        <div id="kPaymentLoader" style="display:none; text-align:center;">Processing...</div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="kwizStep5"><div class="text-center"><h2 style="color:green;">Payment Successful!</h2><button class="btn-primary" onclick="downloadKitchenPlan()">Download Plan</button></div></div>
+            </div>
+            <div class="wizard-footer" id="kwizFooter"><button id="kwizBackBtn" class="btn-outline" onclick="nextKwizStep(-1)">BACK</button><button class="btn-primary" onclick="nextKwizStep(1)">NEXT</button></div>
+        </div>
+    </div>
+
+    <!-- 4. WARDROBE WIZARD -->
+    <div id="wardrobeWizardModal" class="modal">
+        <div class="wizard-content">
+            <span class="close-wwiz-btn">&times;</span>
+            <div class="stepper">
+                <div class="step active" data-step="1"><div class="step-circle">1</div><span>SIZE</span></div><div class="step-line"></div>
+                <div class="step" data-step="2"><div class="step-circle">2</div><span>TYPE</span></div><div class="step-line"></div>
+                <div class="step" data-step="3"><div class="step-circle">3</div><span>STYLE</span></div><div class="step-line"></div>
+                <div class="step" data-step="4"><div class="step-circle">4</div><span>EXTRAS</span></div><div class="step-line"></div>
+                <div class="step" data-step="5"><div class="step-circle">5</div><span>PAY</span></div>
+            </div>
+            <div class="wizard-body">
+                <div class="wizard-step active" id="wwizStep1"><h2 class="text-center" style="margin-bottom: 25px;">What is the height?</h2>
+                    <div class="bhk-options" style="max-width: 400px; margin: 0 auto;">
+                        <div class="sub-option active" style="margin-bottom:10px;" onclick="selectWHeight('4 ft', this)"><span class="radio-circle selected"></span> <strong>4 ft</strong></div>
+                        <div class="sub-option" style="margin-bottom:10px;" onclick="selectWHeight('6 ft', this)"><span class="radio-circle"></span> <strong>6 ft</strong></div>
+                        <div class="sub-option" style="margin-bottom:10px;" onclick="selectWHeight('7 ft', this)"><span class="radio-circle"></span> <strong>7 ft</strong></div>
+                        <div class="sub-option" style="margin-bottom:10px;" onclick="selectWHeight('9 ft', this)"><span class="radio-circle"></span> <strong>9 ft</strong></div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="wwizStep2"><h2 class="text-center" style="margin-bottom: 25px;">Select wardrobe type</h2>
+                    <div class="w-type-grid" style="max-width: 500px; margin: 0 auto;">
+                        <div class="w-type-card active" onclick="selectWType('Sliding', this)"><div style="padding: 15px; display: flex; align-items: center; gap: 10px;"><span class="radio-circle selected"></span> <strong>Sliding</strong></div></div>
+                        <div class="w-type-card" onclick="selectWType('Swing', this)"><div style="padding: 15px; display: flex; align-items: center; gap: 10px;"><span class="radio-circle"></span> <strong>Swing</strong></div></div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="wwizStep3"><h2 class="text-center" style="margin-bottom: 20px;">Select Finish & Material</h2>
+                    <h4 style="color:#B87B56; margin-bottom:10px;">1. Outer Finish</h4>
+                    <div class="bhk-options" style="margin-bottom:25px;">
+                        <div class="w-list-card active" onclick="selectWFinish('Standard - Laminate', this)"><span class="radio-circle selected"></span><div><strong>Standard - Laminate</strong></div></div>
+                        <div class="w-list-card" onclick="selectWFinish('Premium - Membrane', this)"><span class="radio-circle"></span><div><strong>Premium - Membrane</strong></div></div>
+                    </div>
+                    <h4 style="color:#B87B56; margin-bottom:10px;">2. Core Material</h4>
+                    <div class="bhk-options">
+                        <div class="w-list-card active" onclick="selectWMaterial('MDF', this)"><span class="radio-circle selected"></span><div><strong>MDF</strong></div></div>
+                        <div class="w-list-card" onclick="selectWMaterial('HDF-HMR', this)"><span class="radio-circle"></span><div><strong>HDF-HMR</strong></div></div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="wwizStep4"><h2 class="text-center" style="margin-bottom: 25px;">Add accessories</h2>
+                    <div class="acc-grid">
+                        <div class="acc-card" onclick="toggleWAccessory('Loft', this)"><div class="acc-checkbox"></div><div style="padding:15px; text-align:center; font-weight:500;">Loft</div></div>
+                        <div class="acc-card" onclick="toggleWAccessory('Drawer', this)"><div class="acc-checkbox"></div><div style="padding:15px; text-align:center; font-weight:500;">Drawer</div></div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="wwizStep5">
+                    <h2 class="text-center">Your Estimated Quote</h2>
+                    <div style="background: #fdf5f1; padding: 25px; border-radius: 12px; margin-bottom: 25px; text-align: center; border: 1px solid #f2e2d9;">
+                        <h3 id="wEstimateAmount" style="color: #B87B56; font-size: 32px; margin-bottom: 5px;">₹0</h3>
+                        <p style="color: #888; font-size: 13px;">*Estimated range based on materials & accessories</p>
+                    </div>
+                    <div class="payment-form">
+                        <button class="btn-primary" id="wPayBtn" style="width:100%; margin-top:15px;" onclick="processWPayment()">Pay ₹999 & Download</button>
+                        <div id="wPaymentLoader" style="display:none; text-align:center; margin-top:10px; color:#B87B56;">Processing payment...</div>
+                    </div>
+                </div>
+                <div class="wizard-step" id="wwizStep6"><div class="text-center"><h2 style="color:green;">Payment Successful!</h2><button class="btn-primary" onclick="downloadWPlan()" style="margin-top:20px;">Download Plan</button></div></div>
+            </div>
+            <div class="wizard-footer" id="wwizFooter"><button id="wwizBackBtn" class="btn-outline" onclick="nextWWizStep(-1)" style="display:none;">BACK</button><button id="wwizNextBtn" class="btn-primary" onclick="nextWWizStep(1)">NEXT</button></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
